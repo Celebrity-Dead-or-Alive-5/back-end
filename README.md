@@ -45,6 +45,10 @@ returns a JWT and a JSON object with
 }`
 
 
+# '/auth/user'
+
+
+
 
 
 
