@@ -9,7 +9,7 @@ returns a JSON object structured:
     id,
     name,
     image,
-    do
+    doa
 }`
 
 # '/auth'
@@ -27,6 +27,8 @@ returns a JWT and a JSON object with
     username,
     score
 }`
+
+
 
 ## POST '/auth/register'
 
