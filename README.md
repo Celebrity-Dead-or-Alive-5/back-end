@@ -1,5 +1,3 @@
-# back-end
-
 API Docs
 
 # '/celeb'
