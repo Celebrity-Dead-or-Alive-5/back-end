@@ -6,7 +6,7 @@ celeb table:
 id
 name
 photo
-doa
+isDead
 
 user table:
 id
