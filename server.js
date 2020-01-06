@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 
-const celebRouter = require("./celebRouter.js");
+const celebRouter = require("./api/appRouter.js");
 
 const server = express();
 
@@ -10,7 +10,7 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
-server.use("/api", celebRouter);
+server.use("/api", appRouter);
 
 server.get("/", (req, res) => {
   res.send("Alamut Functional.");
