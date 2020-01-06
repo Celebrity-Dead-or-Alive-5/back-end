@@ -1,53 +1,33 @@
-// Update with your config settings.
+require('dotenv').config();
+const pg = require("pg")
+
+pg.defaults.ssl = true;
 
 module.exports = {
-
   development: {
     client: 'pg',
-    connection: {
-      filename: './data/cdoa5.sql',
-    },
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      },
-    },
-     migrations: {
+    connection: process.env.DB_URL,
+    migrations: {
       directory: './data/migrations',
     },
     seeds: { directory: './data/seeds' },
   },
 
-  staging: {
+  testing: {
     client: 'pg',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    connection: process.env.DB_URL,
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './data/migrations',
+    },
+    seeds: { directory: './data/seeds' },
   },
 
   production: {
     client: 'pg',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    connection: process.env.DB_URL,
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
-
+      directory: './data/migrations',
+    },
+    seeds: { directory: './data/seeds' },
+  },
 };

@@ -11,7 +11,7 @@ returns a JSON object structured:
     id,
     name,
     image,
-    do
+    isDead,
 }```
 
 # '/auth'
