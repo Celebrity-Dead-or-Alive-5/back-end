@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const generateToken = require('../config/generate-token.js');
+const generateToken = require('./auth/generateToken');
 const Users = require('../api/models/userModel');
 const Celebs = require('../api/models/celebModel')
 
