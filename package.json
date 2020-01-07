@@ -1,10 +1,12 @@
 {
-  "name": "Celebrity Dead or Alive 5",
+  "name": "cdoa5backend",
   "version": "1.0.0",
   "description": "notes:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env DB_ENV=testing jest --watchAll",
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,9 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.20.4",
     "pg": "^7.15.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
