@@ -6,8 +6,10 @@ exports.up = function(knex) {
           .text("name", 128)
           .notNullable()
           .unique();
-        tbl.text("photo", 128).notNullable();
-        tbl.text("isDead", Boolean).notNullable();
+        tbl.text("imageUrl", 128).notNullable();
+        tbl.text("isDead", Boolean).notNullable()
+        .defaultTo(0)
+        .toString();
       });
     };
 exports.down = function(knex) {

@@ -6,10 +6,8 @@ exports.up = function(knex) {
             .text("username", 128)
             .notNullable()
             .unique();
-          tbl.text("name", 128).notNullable();
-          tbl.text("password", 128).notNullable();
-          tbl.text("score", int);
-        });
+           tbl.text("password", 128).notNullable();
+          });
       };
 exports.down = function(knex) {
         return knex.schema.dropTableIfExists("users");
