@@ -7,13 +7,12 @@ module.exports = {
     findBy,
     add,
     update,
-    remove,
-    nuke
+    remove
 };
 
 function find() {
     return db('celebs')
-      .select('id', 'name', 'imageurl', 'isDead')
+      .select('id', 'name', 'imageUrl', 'isDead')
       .returning('*');
 };
 
@@ -51,9 +50,4 @@ function remove(id) {
     return db('celebs')
       .where('id', Number(id))
       .del();
-}
-
-async function nuke() {
-  await db('celebs')
-    .del();
 }
