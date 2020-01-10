@@ -12,29 +12,39 @@ module.exports = {
 
 function find() {
     return db('users')
-      .select('id', 'username', 'password', 'score');
+      .select('id', 'username', 'password', 'score')
+      .returning('*');
+
 };
 
 function findById(id) {
     return db('users')
       .where({id})
-      .first();
+      .first()
+      .returning('*');
+
 };
 
 function findBy(filter) {
     return db('users')
-      .where(filter);
+      .where(filter)
+      .returning('*');
+
 };
 
 async function add(user) {
     const [id] = await db('users').insert(user, 'id');
-    return db('users').where({id}).first();
+    return db('users').where({id}).first()
+    .returning('*');
+
 };
 
 function addPoints(changes, id) {
     return db('users')
       .where({ id })
-      .update(changes);
+      .update(changes)
+      .returning('*');
+
 };
 
 function remove(id) {

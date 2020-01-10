@@ -7,6 +7,9 @@ exports.up = function(knex) {
             .notNullable()
             .unique();
            tbl.text("password", 128).notNullable();
+           tbl.integer("score")
+          .defaultTo(0)
+          .notNullable();
           });
       };
 exports.down = function(knex) {
