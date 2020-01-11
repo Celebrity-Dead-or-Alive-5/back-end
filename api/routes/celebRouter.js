@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const Users = require('../models/celebModel');
-const Celebs = require('../models/userModel');
+const Users = require('../models/userModel');
+const Celebs = require('../models/celebModel');
 
 //access protected user info
 
