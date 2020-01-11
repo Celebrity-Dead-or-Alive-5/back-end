@@ -72,4 +72,23 @@ router.get('/celebs/:id', (req, res) => {
       });
 });
 
+// points cheat for front end
+//add points to a user
+router.put('/users/:id', (req, res) => {
+    const changes = req.body;
+    const { id } = req.params;
+
+    if (changes.score) {
+        Users.addPoints(changes, id)
+          .then(() => {
+              res.status(200).json(changes);
+          })
+          .catch(err => {
+              res.status(500).json({ message: 'error adding points to user'});
+          });
+    } else {
+        res.status(400).json({ error: 'no changes to points total made'});
+    };
+});
+
 module.exports = router;

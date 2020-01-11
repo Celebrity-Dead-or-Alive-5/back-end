@@ -30,10 +30,9 @@ router.get(`/users/:id`, (req, res) => {
       });
 });
 
-//add points to a user
+/* //add points to a user
 router.put('/users/:id', (req, res) => {
     const changes = req.body;
-    console.log(req.body)
     const { id } = req.params;
 
     if (changes.score) {
@@ -47,7 +46,7 @@ router.put('/users/:id', (req, res) => {
     } else {
         res.status(400).json({ error: 'no changes to points total made'});
     };
-});
+}); */
 
 //delete a user
 router.delete('/users/:id', (req, res) => {
